@@ -1,11 +1,21 @@
-import java.awt.BorderLayout;
+
 import java.awt.*;
+    /*import java.awt.BorderLayout;
+    import java.awt.Color;
+    import java.awt.Font;
+    import java.awt.GridLayout;*/
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.*;
+    /*import javax.swing.ImageIcon;
+    import javax.swing.JButton;
+    import javax.swing.JFrame;
+    import javax.swing.JLabel;
+    import javax.swing.JOptionPane;
+    import javax.swing.JPanel;
+    import javax.swing.SwingConstants;*/
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +24,7 @@ import javax.swing.*;
  */
 /**
  *
- * @author Sumit Kumar (Skj..)
+ * @author Sumit Kumar
  */
 public class TicTacToeGUI extends JFrame implements ActionListener {
 
@@ -23,7 +33,7 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
     JPanel mainpanel;
 
     int gameChance[] = {2, 2, 2, 2, 2, 2, 2, 2, 2}; // give info., buttons are already clicked or not.
-                            // if button clicked then it stores which player was clicked
+                            // if clicked then stores which player was clicked
     
     int activePlayer = 0;       // player '0' play first
 
@@ -93,7 +103,8 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
         this.add(clock, BorderLayout.SOUTH);    // everything done... so add this component in layout
 
         // for current time use thread...
-        Thread t = new Thread() {	// anonymous class
+        Thread t = new Thread() {
+            @Override
             public void run()   // override run method
             {
                 try {
@@ -144,10 +155,10 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
         if (gameOver)  
         {
             // game over message
-            JOptionPane.showMessageDialog(null, "Game Already Over...\n Player " + (winner+1) + " has won the game");
+            JOptionPane.showMessageDialog(null, "     Game Already Over...\n Player " + (winner+1) + " has won the game");
 
             // play more message
-            s = JOptionPane.showConfirmDialog(this, " Do you want to play again???");
+            s = JOptionPane.showConfirmDialog(this, " Do you want to play more???");
 
             //method call for checks user want to play again or not
             isRunAgain(s);
@@ -217,7 +228,7 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
             if (gameOver) // after wining message this code will execute...   because "gameOver==true"
             {
                 // play more message
-                s = JOptionPane.showConfirmDialog(this, "Do you want to play again???");
+                s = JOptionPane.showConfirmDialog(this, "Do you want to play more???");
 
                 //function for checks user want to play again or not
                 isRunAgain(s);
@@ -252,10 +263,10 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
         if(c == 9 && f == false)
         {
             // game over message
-            JOptionPane.showMessageDialog(null, "Game Draw");
+            JOptionPane.showMessageDialog(null, "Game Draw!!!");
 
             // play more message
-            int m = JOptionPane.showConfirmDialog(this, " Do you want to play again???");
+            int m = JOptionPane.showConfirmDialog(this, " Do you want to play more???");
 
             //function for checks user want to play more or not
             isRunAgain(m);
