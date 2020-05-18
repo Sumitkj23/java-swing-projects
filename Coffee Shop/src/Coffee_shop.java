@@ -1,6 +1,7 @@
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -19,7 +20,7 @@ public class Coffee_shop extends javax.swing.JFrame {
      * Creates new form Coffee_shop
      */
     public Coffee_shop() {
-        super("Coffe Shop");
+        super("Coffee Shop");
         initComponents();
     }
     
@@ -40,10 +41,12 @@ public class Coffee_shop extends javax.swing.JFrame {
         }
     }
     
-    void clear()
+    void clear()    // set all text as blank
     {
         assign();                // intialize quantity and finaltotal as 0...
+        
         dtm.setRowCount(0);     // clear Table Data
+        
         jTextField1.setText("");    // clear Total
         jTextArea1.setText("");        // clear receipt
         
@@ -193,7 +196,7 @@ public class Coffee_shop extends javax.swing.JFrame {
         );
 
         jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -330,18 +333,18 @@ public class Coffee_shop extends javax.swing.JFrame {
                         .addGap(0, 30, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
+                        .addGap(24, 24, 24))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(101, 101, 101)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(103, 103, 103)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
@@ -376,7 +379,8 @@ public class Coffee_shop extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+            
+                //Total Button's code
     //when click on total then it will execute
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -386,7 +390,8 @@ public class Coffee_shop extends javax.swing.JFrame {
         
         
                 // check all check boxes one by one, it is checked or not 
-                // if check then stores its value
+                // if check then stores there respective values (itemName, quantity, price)
+                
         if(jCheckBox1.isSelected())
         {
             item[0] = "Veg Burger";
@@ -443,13 +448,14 @@ public class Coffee_shop extends javax.swing.JFrame {
             finaltotal[7] = quantity[7]*50;
         }
         
-                    // set data into table
-        dtm = (DefaultTableModel)jTable1.getModel();
-        for(int i=0;i<8;i++)
+                    // set all stored data into table
+        dtm = (DefaultTableModel)jTable1.getModel();    // reference of jTabel1
+        
+        for(int i=0;i<8;i++)    // for all 8 item
         {
-            if(quantity[i]!=0)      // if quantity not equal to zero then attach row with there data into the table
+            if(quantity[i]>0)      // if quantity greater than zero then attach row with there data into the table
             {
-                dtm.addRow(new Object[]
+                dtm.addRow(new Object[]     // new row add
                 {
                     item[i],price[i],quantity[i],finaltotal[i]
                 });
@@ -463,15 +469,16 @@ public class Coffee_shop extends javax.swing.JFrame {
 
         jTextField1.setText("     "+Integer.toString(sum)+"  Rs."); // set data into 'total box'
         
+        
                         // code for receipt
         
         Calendar timer = Calendar.getInstance();        // get current instance of time
-        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");  // time formated
+        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss a");  // time formated
         tTime.format(timer.getTime());
         SimpleDateFormat Tdate = new SimpleDateFormat("dd-MM:YYYY");   // date formated 
         Tdate.format(timer.getTime());
         
-        int refs = 100 + (int) (Math.random()+5238);    // randomly generate refernce number of receipt
+        int refs = 100 + (int) (Math.random()+5238);    // randomly generate refernce number for receipt
         
         jTextArea1.setText("");     // clear all text from receipt
         
@@ -481,7 +488,7 @@ public class Coffee_shop extends javax.swing.JFrame {
                 "\n  ==============================================\n");
         
         for(int i=0;i<8;i++)
-            if(quantity[i]!=0)      // if quantity are present then show information into receipt
+            if(quantity[i]>0)      // if quantity are present then show information into receipt
                 jTextArea1.append(" "+item[i]+":- \t Quantity : "+quantity[i]+"\t Total : "+finaltotal[i]+"Rs.\n");
         
         jTextArea1.append("\n\t\t Grand Total : "+ sum +
@@ -502,7 +509,9 @@ public class Coffee_shop extends javax.swing.JFrame {
      // exit button's code
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        int i = JOptionPane.showConfirmDialog(null, "Are You Sure, You Want To Exit !!!", "Coffee Shop", JOptionPane.YES_NO_OPTION);
+        if(i == 0)
+            System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
