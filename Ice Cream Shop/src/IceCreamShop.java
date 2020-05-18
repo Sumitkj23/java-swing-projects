@@ -112,15 +112,15 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
 
         jTabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\3-34281_strawberry-ice-cream-png-ice-cream-scoop-png.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("img\\strawberry.png")); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (1).jpeg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("img\\images (1).jpeg")); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (3).jpeg")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("img\\images (3).jpeg")); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images.jpeg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("img\\images.jpeg")); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\chocklate.jpeg")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("img\\chocklate.jpeg")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -155,15 +155,15 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
 
         jTabbedPane1.addTab("Ice Cream", jPanel2);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (6).jpeg")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("img\\images (6).jpeg")); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\download.jpeg")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("img\\download.jpeg")); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (7).jpeg")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("img\\images (7).jpeg")); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (4).jpeg")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("img\\images (4).jpeg")); // NOI18N
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Ice Cream Shop\\img\\images (5).jpeg")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("img\\images (5).jpeg")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -198,7 +198,7 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
         jTabbedPane1.addTab("Drink", jPanel3);
 
         jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -299,7 +299,7 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
         
         
         Calendar timer = Calendar.getInstance();    // stores current time and date
-        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");  // time format
+        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss a");  // time format
         tTime.format(timer.getTime());  // attatch 'time format' into current time(timer)
         SimpleDateFormat Tdate = new SimpleDateFormat("dd-MM:YYYY");    // date format
         Tdate.format(timer.getTime());  // attatch 'date format' into current date(timer)
@@ -314,7 +314,7 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
                 "\n  ==============================================\n");
         
         for(int i=0;i<10;i++)   // all 10 items add into receipt
-            if(quantity[i]!=0)  // if quantity are present or   item is selected by customer
+            if(quantity[i]>0)  // if quantity are present or   item is selected by customer
                 jTextArea1.append(" "+item[i]+":- \t Quantity : "+quantity[i]+"\t Total : "+finaltotal[i]+"Rs.\n");
       // add 'itemName', 'total quantity of particular item', 'total cost of particular item with respect to total quantity'
         jTextArea1.append("\n\t\t Grand Total : "+ sum +
@@ -394,17 +394,22 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
         int q=0;    // item quantity
         int total;  // total item price (price*quantity)
         
+        try{     // if quantity not in decimal format then exception occur...
+            
         if(me.getSource() == jLabel2)   // for strawberry
         {
-            
-            name = "Strawberry";
-            price = 50;
-            q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity")); // input dialog for taking quantity
-            
-                // assign these value into corresponding array
-            item[0]=name;   
-            quantity[0]+=q;
-            finaltotal[0]+=50*q;
+                name = "Strawberry";
+                price = 50;
+                q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity")); // input dialog for taking quantity
+
+                    // assign these value into corresponding array
+                item[0]=name;  
+                
+                if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+                {
+                    quantity[0]+=q;
+                    finaltotal[0]+=50*q;
+                }
         }
         else if(me.getSource() == jLabel6)  // for chocklate
         {
@@ -412,8 +417,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 45;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[1]=name;
-            quantity[1]+=q;
-            finaltotal[1]+=45*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[1]+=q;
+                finaltotal[1]+=45*q;
+            }
         }
         else if(me.getSource() == jLabel3)
         {
@@ -421,8 +430,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 60;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[2]=name;
-            quantity[2]+=q;
-            finaltotal[2]+=60*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[2]+=q;
+                finaltotal[2]+=60*q;
+            }
         }
         else if(me.getSource() == jLabel4)
         {
@@ -430,8 +443,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 40;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[3]=name;
-            quantity[3]+=q;
-            finaltotal[3]+=40*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[3]+=q;
+                finaltotal[3]+=40*q;
+            }
         }
         else if(me.getSource() == jLabel5)
         {
@@ -439,8 +456,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 45;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[4]=name;
-            quantity[4]+=q;
-            finaltotal[4]+=45*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[4]+=q;
+                finaltotal[4]+=45*q;
+            }
         }
         
         else if(me.getSource() == jLabel7)
@@ -449,8 +470,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 60;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[5]=name;
-            quantity[5]+=q;
-            finaltotal[5]+=60*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[5]+=q;
+                finaltotal[5]+=60*q;
+            }
         }
         else if(me.getSource() == jLabel8)
         {
@@ -458,8 +483,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 40;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[6]=name;
-            quantity[6]+=q;
-            finaltotal[6]+=40*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[6]+=q;
+                finaltotal[6]+=40*q;
+            }
         }
         else if(me.getSource() == jLabel9)
         {
@@ -467,8 +496,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 30;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[7]=name;
-            quantity[7]+=q;
-            finaltotal[7]+=30*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[7]+=q;
+                finaltotal[7]+=30*q;
+            }
         }
         else if(me.getSource() == jLabel10)
         {
@@ -476,8 +509,12 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 30;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[8]=name;
-            quantity[8]+=q;
-            finaltotal[8]+=30*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[8]+=q;
+                finaltotal[8]+=30*q;
+            }
 
         }
         else if(me.getSource() == jLabel11)
@@ -486,26 +523,38 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
             price = 25;
             q = Integer.parseInt(JOptionPane.showInputDialog("Enter The Quantity"));
             item[9]=name;
-            quantity[9]+=q;
-            finaltotal[9]+=25*q;
+            
+            if(q>0)         // if user enter +ve quantity then store it into array otherwise it is garbage...
+            {
+                quantity[9]+=q;
+                finaltotal[9]+=25*q;
+            }
         }
         
-        
-        total = price*q;    // calculate cost of item according to its quantity 
-        dtm = (DefaultTableModel)jTable1.getModel();    // reference of table for set data into table
-        dtm.addRow(new Object[]     // attatcg row in table by the help of object we can also do this by vector
+        if(q>0)     // if quantity greater than zero then show data into jTabel1
         {
-            name,price,q,total
+            total = price*q;    // calculate cost of item according to its quantity 
+            dtm = (DefaultTableModel)jTable1.getModel();    // reference of table for set data into table
+            dtm.addRow(new Object[]     // attatcg row in table by the help of object we can also do this by vector
+            {
+                name,price,q,total
+            }
+                    );
+            sum =0;     // total cost of all item with there quantity
+
+            for(int i=0;i<jTable1.getRowCount();i++)
+                sum += Integer.parseInt(jTable1.getValueAt(i, 3).toString());   // calculate total cost row by row 
+
+            jTextField1.setText(Integer.toString(sum));     // add total cost
+        
         }
-                );
-        sum =0;     // total cost of all item with there quantity
-
-        for(int i=0;i<jTable1.getRowCount();i++)
-            sum += Integer.parseInt(jTable1.getValueAt(i, 3).toString());   // calculate total cost row by row 
-
-        jTextField1.setText(Integer.toString(sum));     // add total cost
+        else         // if quantity less than or equal to zero then show this message
+            JOptionPane.showMessageDialog(null, "Plese Enter Valid Quantity");     
         
-        
+        }catch(Exception e)     // if quantity not in decimal format then exception occur...
+        {
+            JOptionPane.showMessageDialog(null, "Plese Enter Valid Quantity");
+        }
        
     }
 
