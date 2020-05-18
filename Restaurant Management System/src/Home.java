@@ -89,14 +89,13 @@ public class Home extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1367, 688));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Restaurant Management System\\images\\restro.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("images\\restro.png")); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 5));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("F:\\programs\\netbeans\\Restaurant Management System\\images\\restro.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("images\\restro.png")); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 5));
 
         jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
@@ -114,7 +113,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
         );
@@ -142,10 +141,8 @@ public class Home extends javax.swing.JFrame {
         jLabel8.setText("Butter Chicken");
 
         jTextField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField5.setText("0");
 
         jTextField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField4.setText("0");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("Meals");
@@ -154,13 +151,10 @@ public class Home extends javax.swing.JFrame {
         jLabel5.setText("Chicken Burger");
 
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField3.setText("0");
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setText("0");
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField2.setText("0");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Paneer");
@@ -184,24 +178,25 @@ public class Home extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                 .addGap(4, 4, 4)
                                 .addComponent(jLabel8)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel7)
                                 .addComponent(jLabel6)))
+                        .addGap(130, 130, 130)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(127, 127, 127)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(130, 130, 130)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(36, 36, 36))
         );
         jPanel3Layout.setVerticalGroup(
@@ -241,22 +236,18 @@ public class Home extends javax.swing.JFrame {
         jLabel15.setText("Drinks");
 
         jTextField7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField7.setText("0");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Cold Drink");
 
         jTextField8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField8.setText("0");
 
         jTextField9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField9.setText("0");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Vanilla Cone");
 
         jTextField6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField6.setText("0");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Milk Shake");
@@ -268,7 +259,6 @@ public class Home extends javax.swing.JFrame {
         jLabel10.setText("Chocklate Milk Shake");
 
         jTextField10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField10.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -481,13 +471,13 @@ public class Home extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(total)
+                .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(93, 93, 93)
                 .addComponent(receipt)
+                .addGap(78, 78, 78)
+                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(91, 91, 91)
-                .addComponent(reset)
-                .addGap(116, 116, 116)
-                .addComponent(exit)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
         jPanel6Layout.setVerticalGroup(
@@ -517,14 +507,14 @@ public class Home extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -532,10 +522,10 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -547,9 +537,9 @@ public class Home extends javax.swing.JFrame {
                                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(48, 48, 48))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,17 +549,17 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -591,7 +581,7 @@ public class Home extends javax.swing.JFrame {
             if(c.getClass().toString().contains("javax.swing.JTextField"))
             {
                 clearText = (JTextField)c;
-                clearText.setText("0");
+                clearText.setText("");      // set as blank...
             }
         }
         
@@ -600,7 +590,7 @@ public class Home extends javax.swing.JFrame {
             if(c.getClass().toString().contains("javax.swing.JTextField"))
             {
                 clearText = (JTextField)c;
-                clearText.setText("0");
+                clearText.setText("");
             }
         }
         
@@ -622,56 +612,84 @@ public class Home extends javax.swing.JFrame {
             }
         }
         jTextArea1.setText(null);
+        jTextField1.requestFocus();
     }//GEN-LAST:event_resetActionPerformed
 
     private void totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalActionPerformed
         // TODO add your handling code here:
-        int m1=0,m2=0,m3=0,m4=0,m5=0;
+            
+                // intialize all data as zero...
+        int m1=0,m2=0,m3=0,m4=0,m5=0;           
         int d1=0,d2=0,d3=0,d4=0,d5=0;
         double costmeal=0, costdrink=0, costitem=0;
         double tax=0.18, subtotal, total; 
-        m1 = Integer.parseInt(jTextField1.getText());
-        m2 = Integer.parseInt(jTextField2.getText());
-        m3 = Integer.parseInt(jTextField3.getText());
-        m4 = Integer.parseInt(jTextField4.getText());
-        m5 = Integer.parseInt(jTextField5.getText());
         
-        d1 = Integer.parseInt(jTextField6.getText());
-        d2 = Integer.parseInt(jTextField7.getText());
-        d3 = Integer.parseInt(jTextField8.getText());
-        d4 = Integer.parseInt(jTextField9.getText());
-        d5 = Integer.parseInt(jTextField10.getText());
+        try{        // if quantity is not in integer formate then exception occurs...
+            if(!jTextField1.getText().isEmpty())        // check quantity is not empty, then convert into int... otherwise bydeafault it is zero
+                m1 = Integer.parseInt(jTextField1.getText());
+            if(!jTextField2.getText().isEmpty())
+                m2 = Integer.parseInt(jTextField2.getText());
+            if(!jTextField3.getText().isEmpty())
+                m3 = Integer.parseInt(jTextField3.getText());
+            if(!jTextField4.getText().isEmpty())
+                m4 = Integer.parseInt(jTextField4.getText());
+            if(!jTextField5.getText().isEmpty())
+                m5 = Integer.parseInt(jTextField5.getText());
+
+            if(!jTextField6.getText().isEmpty())
+                d1 = Integer.parseInt(jTextField6.getText());
+            if(!jTextField7.getText().isEmpty())
+                d2 = Integer.parseInt(jTextField7.getText());
+            if(!jTextField8.getText().isEmpty())
+                d3 = Integer.parseInt(jTextField8.getText());
+            if(!jTextField9.getText().isEmpty())
+                d4 = Integer.parseInt(jTextField9.getText());
+            if(!jTextField10.getText().isEmpty())
+                d5 = Integer.parseInt(jTextField10.getText());
+        }catch(Exception e)     // if exception occurs then show this message and return...
+        {
+            JOptionPane.showMessageDialog(null, "Plese Enter Valid Quantity Which You Want...\n       (Plese Enter In Integer Format)");
+            return;     // remaining statement does not execute
+        }
         
-        costmeal = 30*m1 + 50*m2 + 40*m3 + 70*m4 + 110*m5;
-        costdrink = 20*d1 + 30*d2 + 20*d3 + 20*d4 + 50*d5;
-        costitem = costmeal + costdrink;
+                // if entered quantity in integer format then check quantity greater than zero or not...
+        if(m1<0 || m2<0 || m3<0 || m4<0 || m5<0 || d1<0 || d2<0 || d3<0 || d4<0 || d5<0)
+            JOptionPane.showMessageDialog(null, "Plese Enter Valid Quantity, How Many You Want !!!\n          (Plese Enter Greater than zero...)");
+        else        // if entered quantity greater than zero then execute this...
+        {
+            costmeal = 30*m1 + 50*m2 + 40*m3 + 70*m4 + 110*m5;
+            costdrink = 20*d1 + 30*d2 + 20*d3 + 20*d4 + 50*d5;
+            costitem = costmeal + costdrink;
+
+            tax = costitem*tax;
+            subtotal = costitem;
+            total = subtotal + tax;
+
+                // display data in jPanel2...
+            String CostMeal = String.format("%.2f", costmeal);
+            jTextField11.setText(CostMeal+ " Rs.");
+            String CostDrink = String.format("%.2f", costdrink);
+            jTextField12.setText(CostDrink+ " Rs.");
+            String CostItem = String.format("%.2f", costitem);
+            jTextField13.setText(CostItem+ " Rs.");        
+
+                // display data in jPanel5...
+            jTextField14.setText(String.format("%.2f", tax)+ " Rs.");
+            jTextField15.setText(String.format("%.2f", subtotal)+ " Rs.");
+            jTextField16.setText(String.format("%.2f", total)+ " Rs.");
+        }
         
-        tax = costitem*tax;
-        subtotal = costitem;
-        total = subtotal + tax;
-        
-        
-        
-        String CostMeal = String.format("%.2f", costmeal);
-        jTextField11.setText(CostMeal+ " Rs.");
-        String CostDrink = String.format("%.2f", costdrink);
-        jTextField12.setText(CostDrink+ " Rs.");
-        String CostItem = String.format("%.2f", costitem);
-        jTextField13.setText(CostItem+ " Rs.");        
-        
-        
-        jTextField14.setText(String.format("%.2f", tax)+ " Rs.");
-        jTextField15.setText(String.format("%.2f", subtotal)+ " Rs.");
-        jTextField16.setText(String.format("%.2f", total)+ " Rs.");
     }//GEN-LAST:event_totalActionPerformed
 
     private void receiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptActionPerformed
         // TODO add your handling code here:
+        
+        jTextArea1.setText("");
         int refs = 1325 + (int) (Math.random()+4238);
         
         Calendar timer = Calendar.getInstance();
-        //timer.getTime();
-        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss");
+        
+        SimpleDateFormat tTime = new SimpleDateFormat("HH:mm:ss a");
         tTime.format(timer.getTime());
         SimpleDateFormat Tdate = new SimpleDateFormat("dd-MM:YYYY");
         Tdate.format(timer.getTime());
@@ -689,7 +707,7 @@ public class Home extends javax.swing.JFrame {
                     "  ======================================"+"\n"+
                 "\n  Date : "+ Tdate.format(timer.getTime())+
                 "\t  Time : "+tTime.format(timer.getTime())+
-                "\n\n\t\t Thank you");
+                "\n\n\t\t   Thank you");
     }//GEN-LAST:event_receiptActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
