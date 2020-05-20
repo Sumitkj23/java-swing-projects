@@ -27,7 +27,7 @@ public class IceCreamShop extends javax.swing.JFrame implements MouseListener{
         super("Ice Cream Shop");
         initComponents();
         
-        // attach listener for all image
+        	// attach mouse listener for all image
         jLabel2.addMouseListener(this);
         jLabel3.addMouseListener(this);
         jLabel4.addMouseListener(this);
