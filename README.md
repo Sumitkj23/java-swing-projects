@@ -1,7 +1,7 @@
 # java-swing-projects
 
 
-									 #1. Ice Cream Shop project
+					 #1. Ice Cream Shop project
 
 you can open this project into netbeans ide directly... And run
 
@@ -19,7 +19,7 @@ It is 'Coffee Shop' project in java.
 I write comments along with the code so that there is no problem in understanding the code.
 
 
-									 #3. Restaurant Management System project
+					#3. Restaurant Management System project
 
 you can open this project into netbeans ide directly... And run
 
